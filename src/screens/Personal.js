@@ -2,10 +2,10 @@ import React from 'react';
 
 import {View, Text, StyleSheet} from 'react-native';
 
-const Personal = () => {
+const Hiking = () => {
   return (
     <View style={styles.mainContainer}>
-      <Text>Personal</Text>
+      <Text>Hiking</Text>
     </View>
   );
 };
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Personal;
+export default Hiking;
