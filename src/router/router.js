@@ -12,7 +12,7 @@ const TabNavigator = createBottomTabNavigator(
       screen: HomeScreen,
       navigationOptions: {
         tabBarIcon: ({focused, tintColor}) => {
-          return <Icon name="home-outline" size={30} color={tintColor} />;
+          return <Icon name="apple-safari" size={30} color={tintColor} />;
         },
       },
     },
@@ -28,7 +28,7 @@ const TabNavigator = createBottomTabNavigator(
   {
     initialRouteName: 'Home',
     tabBarOptions: {
-      activeTintColor: '#8ac6d1',
+      activeTintColor: '#3faba4',
       inactiveTintColor: '#a6a6a6',
       labelStyle: {
         marginTop: -5,

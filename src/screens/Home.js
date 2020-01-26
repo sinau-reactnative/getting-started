@@ -1,84 +1,52 @@
 import React, {Fragment} from 'react';
+import {View, Text, StyleSheet, SafeAreaView, Dimensions} from 'react-native';
 
-import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-  Image,
-  Dimensions,
-} from 'react-native';
+import Carousel from '../components/Home/Carousel';
+import Search from '../components/Home/Search';
 
 const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('screen');
 
 const Home = () => {
-  const Carousel = () => {
+  const Title = () => {
     return (
-      <Fragment>
-        <ScrollView
-          style={styles.carouselContainer}
-          horizontal
-          pagingEnabled
-          showsHorizontalScrollIndicator={false}>
-          <View style={styles.imageContainer}>
-            <Image
-              style={styles.imageStyle}
-              source={require('../assets/mountain_1.jpeg')}
-            />
-            <View style={styles.imageOverlay} />
-          </View>
-          <View style={styles.imageContainer}>
-            <Image
-              style={styles.imageStyle}
-              source={require('../assets/mountain_2.jpeg')}
-            />
-            <View style={styles.imageOverlay} />
-          </View>
-          <View style={styles.imageContainer}>
-            <Image
-              style={styles.imageStyle}
-              source={require('../assets/mountain_3.jpeg')}
-            />
-            <View style={styles.imageOverlay} />
-          </View>
-        </ScrollView>
-      </Fragment>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>Focrito.</Text>
+        <Text style={styles.subtitle}>
+          Journey to the <Text style={{color: '#3faba4'}}>middle earth</Text>
+        </Text>
+      </View>
     );
   };
 
   return (
     <SafeAreaView style={styles.mainContainer}>
+      <Title />
       <Carousel />
+      <Search />
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  carouselContainer: {
-    padding: 15,
+  titleContainer: {
+    margin: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  imageContainer: {
-    marginRight: 10,
-    width: SCREEN_WIDTH / 1.2,
-    height: SCREEN_HEIGHT / 2.5,
+  title: {
+    fontSize: 34,
+    fontFamily: 'OpenSansCondensed-LightItalic',
+    color: '#104f7a',
   },
-  imageOverlay: {
-    backgroundColor: 'rgba(255, 182, 117, 0.3)',
-    position: 'absolute',
-    zIndex: 1,
-    width: SCREEN_WIDTH / 1.2,
-    height: SCREEN_HEIGHT / 2.5,
-    borderRadius: 10,
-  },
-  imageStyle: {
-    width: SCREEN_WIDTH / 1.2,
-    height: SCREEN_HEIGHT / 2.5,
-    resizeMode: 'cover',
-    borderRadius: 10,
+  subtitle: {
+    fontSize: 10,
+    color: '#0f4c75',
   },
 });
 
